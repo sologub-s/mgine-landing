@@ -1,0 +1,22 @@
+#AuthType Basic
+#AuthName "Restricted Content"
+#AuthUserFile /var/www/vagrant_www/dianetika.sologub.od.ua/.htpasswd
+#Require valid-user
+
+<IfModule mod_headers.c>
+Header set Connection keep-alive
+
+    <filesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|swf)$">
+        Header set Cache-Control "max-age=31536000, public, must-revalidate"
+    </filesMatch>
+
+</IfModule>
+
+RewriteEngine On
+
+#Don't favicon!
+RewriteCond %{REQUEST_FILENAME} !^favicon\.ico
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI}  !^(/fancybox|/font|/img|/js)
+RewriteRule ^(.*)$ index.php [L,QSA]

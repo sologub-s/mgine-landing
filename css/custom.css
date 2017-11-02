@@ -1,0 +1,90 @@
+.starter-template {
+  text-align: center;
+  background: url("../img/rt.svg"); }
+
+.btn-custom {
+  border: 2px solid #00489D;
+  border-radius: initial;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 0; }
+  .btn-custom:active {
+    background-color: #4A90E2;
+    color: #ffffff; }
+  @media (max-width: 1023px) {
+    .btn-custom {
+      font-size: 40px; } }
+
+.btn-white {
+  background-color: #ffffff;
+  color: #00489D; }
+  .btn-white:hover {
+    background-color: #00489D;
+    color: #ffffff; }
+
+.btn-blue {
+  background-color: #00489D; }
+  .btn-blue:hover {
+    background-color: #ffffff;
+    color: #00489D; }
+
+.uppercase {
+  text-transform: uppercase; }
+
+.navbar-custom {
+  background-color: #ffffff;
+  color: #00489D;
+  height: 64px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  padding-left: 10%;
+  padding-right: 10%;
+  flex-wrap: wrap; }
+  @media (max-width: 1023px) {
+    .navbar-custom {
+      height: 120px; } }
+  .navbar-custom .navbar-brand img {
+    width: 77px;
+    height: 32px; }
+    @media (max-width: 1023px) {
+      .navbar-custom .navbar-brand img {
+        width: auto;
+        height: 100px; } }
+  .navbar-custom > button {
+    margin-left: auto;
+    height: auto; }
+
+section.section1 {
+  height: 209px;
+  text-align: center;
+  background: url("../img/rt.png") right top no-repeat;
+  overflow: hidden;
+  margin-top: 64px; }
+  @media (max-width: 1023px) {
+    section.section1 {
+      margin-top: 120px; } }
+  section.section1 h1 {
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 36px;
+    color: #4A4A4A;
+    letter-spacing: 0; }
+
+section.section2 {
+  height: 446px;
+  background: #00489D;
+  flex-wrap: wrap; }
+  section.section2 .part {
+    width: 456px;
+    height: 350px; }
+    section.section2 .part.left {
+      background: url("../img/leftGroup.png") right center no-repeat; }
+    section.section2 .part.right {
+      background: url("../img/rightGroup.png") left center no-repeat; }
+  @media (max-width: 1023px) {
+    section.section2 {
+      height: auto;
+      padding-top: 20px;
+      padding-bottom: 20px; } }
+
+/*# sourceMappingURL=custom.css.map */

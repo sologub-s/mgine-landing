@@ -1,0 +1,115 @@
+$colorBlue: #00489D;
+$colorLightBlue: #4A90E2;
+$colorDarkGrey: #4A4A4A;
+$navHeight: 64;
+$navHeightXs: 120;
+
+body {
+}
+.starter-template {
+  text-align: center;
+  background: url('../img/rt.svg');
+}
+
+.btn-custom {
+  border: 2px solid $colorBlue;
+  border-radius: initial;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 0;
+  &:active {
+    background-color: $colorLightBlue;
+    color: #ffffff;
+  }
+  @media (max-width: 1023px) {
+    font-size: 40px;
+  }
+}
+
+.btn-white {
+  background-color: #ffffff;
+  color: $colorBlue;
+  &:hover {
+    background-color: $colorBlue;
+    color: #ffffff;
+  }
+}
+
+.btn-blue {
+  background-color: $colorBlue;
+  &:hover {
+    background-color: #ffffff;
+    color: $colorBlue;
+  }
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.navbar-custom {
+  background-color: #ffffff;
+  color: $colorBlue;
+  height: #{$navHeight}px;
+  @media (max-width: 1023px) {
+    height: #{$navHeightXs}px;
+  }
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+  padding-left: 10%;
+  padding-right: 10%;
+  flex-wrap: wrap;
+  .navbar-brand img {
+    width: 77px;
+    height: 32px;
+    @media (max-width: 1023px) {
+      width: auto;
+      height: #{$navHeightXs - 20}px;
+    }
+  }
+  > button {
+    margin-left: auto;
+    height: auto;
+  }
+}
+
+section.section1 {
+  height: 209px;
+  text-align: center;
+  background: url('../img/rt.png') right top no-repeat;
+  overflow: hidden;
+  margin-top: #{$navHeight}px;
+  @media (max-width: 1023px) {
+    margin-top: #{$navHeightXs}px;
+  }
+  h1 {
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 36px;
+    color: $colorDarkGrey;
+    letter-spacing: 0;
+  }
+}
+
+section.section2 {
+  height: 446px;
+  background: $colorBlue;
+  flex-wrap: wrap;
+  .part {
+    width: 456px;
+    height: 350px;
+    &.left {
+      background: url('../img/leftGroup.png') right center no-repeat;
+    }
+    &.right {
+      background: url('../img/rightGroup.png') left center no-repeat;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+}
