@@ -105,6 +105,23 @@ section.section2 {
       background: url('../img/rightGroup.png') left center no-repeat;
     }
   }
+  .overlay1 {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: url('../img/overlay.svg') right center no-repeat;
+  }
+
+  .overlay2 {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    left: 0;
+    top: 0;
+    background: url('../img/overlay.svg') right center no-repeat;
+  }
 
   @media (max-width: 1023px) {
     height: auto;

@@ -81,6 +81,20 @@ section.section2 {
       background: url("../img/leftGroup.png") right center no-repeat; }
     section.section2 .part.right {
       background: url("../img/rightGroup.png") left center no-repeat; }
+  section.section2 .overlay1 {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: url("../img/overlay.svg") right center no-repeat; }
+  section.section2 .overlay2 {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    left: 0;
+    top: 0;
+    background: url("../img/overlay.svg") right center no-repeat; }
   @media (max-width: 1023px) {
     section.section2 {
       height: auto;
