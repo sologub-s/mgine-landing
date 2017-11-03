@@ -2,6 +2,64 @@
   text-align: center;
   background: url("../img/rt.svg"); }
 
+.modal-backdrop {
+  opacity: 0.4;
+  background: #00489D; }
+
+.modal-dialog {
+  width: 520px;
+  align-items: center; }
+  .modal-dialog .modal-header {
+    border: none; }
+    .modal-dialog .modal-header img {
+      width: 14px;
+      height: 14px;
+      margin-right: 0;
+      cursor: pointer;
+      cursor: hand;
+      transition: transform .4s ease-in-out; }
+      .modal-dialog .modal-header img:hover {
+        transform: rotate(180deg); }
+  .modal-dialog .modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 60px;
+    background: url("../img/modalBg.png") left bottom no-repeat; }
+    .modal-dialog .modal-body a {
+      color: #00489D;
+      text-decoration: none;
+      font-family: 'Open Sans';
+      font-size: 16px;
+      letter-spacing: 0;
+      margin-top: 20px; }
+      .modal-dialog .modal-body a:hover {
+        text-decoration: underline; }
+    .modal-dialog .modal-body input {
+      width: 330px;
+      height: 0px;
+      padding-bottom: 15px;
+      padding-top: 20px;
+      border: none;
+      border-bottom: 1px solid #4A90E2;
+      margin-top: 32px; }
+      .modal-dialog .modal-body input::placeholder {
+        font-family: 'Roboto';
+        font-size: 16px;
+        line-height: 24px;
+        color: rgba(0, 0, 0, 0.38); }
+    .modal-dialog .modal-body .btn-blue {
+      width: 180px;
+      height: 60px;
+      margin-top: 45px; }
+  .modal-dialog h2 {
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 36px;
+    color: #4A4A4A;
+    letter-spacing: 0;
+    text-align: center; }
+
 .btn-custom {
   border: 2px solid #00489D;
   border-radius: initial;
@@ -24,7 +82,8 @@
     color: #ffffff; }
 
 .btn-blue {
-  background-color: #00489D; }
+  background-color: #00489D;
+  color: #ffffff; }
   .btn-blue:hover {
     background-color: #ffffff;
     color: #00489D; }
@@ -44,8 +103,7 @@
     .navbar-custom {
       height: 120px; } }
   .navbar-custom .navbar-brand img {
-    width: 77px;
-    height: 32px; }
+    width: 77px; }
     @media (max-width: 1023px) {
       .navbar-custom .navbar-brand img {
         width: auto;
@@ -95,10 +153,62 @@ section.section2 {
     left: 0;
     top: 0;
     background: url("../img/overlay.svg") right center no-repeat; }
+  section.section2 .wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%; }
+    section.section2 .wrapper .content {
+      margin: 0 180px;
+      align-self: center;
+      text-align: center; }
+      section.section2 .wrapper .content h2 {
+        font-family: 'Open Sans';
+        font-weight: 600;
+        font-size: 24px;
+        color: #4A4A4A;
+        letter-spacing: 0;
+        margin-bottom: 30px; }
+      section.section2 .wrapper .content .btn-custom {
+        margin: 0 auto;
+        width: 123px; }
   @media (max-width: 1023px) {
     section.section2 {
       height: auto;
       padding-top: 20px;
-      padding-bottom: 20px; } }
+      padding-bottom: 20px; }
+      section.section2 .wrapper {
+        flex-direction: column; }
+        section.section2 .wrapper .content {
+          margin: 100px 0; }
+          section.section2 .wrapper .content h2 {
+            font-size: 44px;
+            margin-bottom: 20px; }
+          section.section2 .wrapper .content .btn-custom {
+            width: 240px; } }
+
+section.section3 {
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding-bottom: 20px; }
+  section.section3 img {
+    width: 83px;
+    margin-top: 80px; }
+  section.section3 a {
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 16px;
+    color: #4A4A4A;
+    letter-spacing: 0;
+    text-decoration: none;
+    margin-top: 20px; }
+    section.section3 a:hover {
+      text-decoration: underline; }
+  @media (max-width: 1023px) {
+    section.section3 img {
+      width: auto;
+      height: 120px; }
+    section.section3 a {
+      font-size: 46px;
+      margin-top: 40px; } }
 
 /*# sourceMappingURL=custom.css.map */
