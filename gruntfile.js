@@ -23,24 +23,9 @@ module.exports = function(grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: 'img-src/',
-                    src: ['**/*.{png,jpg,jpeg,gif,svg}'],
-                    dest: 'img/'
-                }]
-            }
-        },
-        imagemin: {
-            dynamic: {
-                options: {
-                    optimizationLevel: 7,
-                    svgoPlugins: [{removeViewBox: false}],
-                    use: [mozjpeg()] // Example plugin usage
-                },
-                files: [{
-                    expand: true,
                     cwd: 'img/',
-                    src: ['**/*.{png,jpg,gif,jpeg}'],
-                    dest: 'img/'
+                    src: ['**/*.{png,jpg,jpeg,gif,svg}'],
+                    dest: 'build/img/'
                 }]
             }
         },
@@ -50,23 +35,17 @@ module.exports = function(grunt) {
             },
             dist: {
                 src: [
-                    'js/jquery-1.10.2.js',
-                    'js/sliderotziv.js',
-                    'js/slider-book.js',
-                    'js/codokna.js',
-                    'js/jquery.maskedinput.min.js',
-                    'js/jquery.anoslide.js',
-                    'fancybox/jquery.mousewheel-3.0.6.pack.js',
-                    'fancybox/source/jquery.fancybox.js',
-                    'js/custom.js'
+                    'node_modules/jquery/dist/jquery.js',
+                    'node_modules/tether/dist/js/tether.min.js',
+                    'node_modules/bootstrap/dist/js/bootstrap.min.js'
                 ],
-                dest: 'js/bundle.js6',
+                dest: 'build/js/bundle.js6',
             },
         },
         es6transpiler: {
             dist: {
                 files: {
-                    'js/bundle.js': 'js/bundle.js6'
+                    'build/js/bundle.js': 'build/js/bundle.js6'
                 }
             },
             options: {
@@ -77,11 +56,10 @@ module.exports = function(grunt) {
         uglify: {
             my_target: {
                 options: {
-                    sourceMap: true,
-                    sourceMapName: 'js/bundle.map'
+                    sourceMap: true
                 },
                 files: {
-                    'js/bundle.min.js': ['js/bundle.js']
+                    'build/js/bundle.min.js': ['build/js/bundle.js']
                 }
             }
         },
@@ -91,7 +69,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'css/custom.css': 'css/custom.scss'
+                    'build/css/custom.css': 'scss/custom.scss'
                 }
             }
         },
@@ -102,12 +80,49 @@ module.exports = function(grunt) {
             },
             target: {
                 files: {
-                    'css/bundle.min.css': ['css/style.css', 'css/style-mobile.css', 'fancybox/source/jquery.fancybox.css', 'css/font-awesome-4.7.0/css/font-awesome.css']
+                    'build/css/bundle.css': [
+                        'node_modules/bootstrap/dist/css/bootstrap.css',
+                        'node_modules/tether/dist/css/tether.css',
+                        'node_modules/font-awesome/css/font-awesome.css',
+                        'build/css/custom.css'
+                    ]
                 }
+            }
+        },
+        postcss: {
+            options: {
+                map: true,
+                processors: [
+                    require('pixrem')(), // add fallbacks for rem units
+                    require('autoprefixer')({browsers: 'last 2 versions'}), // add vendor prefixes
+                    require('cssnano')() // minify the result
+                ]
+            },
+            dist: {
+                src: 'build/css/bundle.css',
+                dest: 'build/css/bundle.min.css'
+            },
+        },
+        copy: {
+            main: {
+                expand: true,
+                cwd: 'node_modules/font-awesome/fonts',
+                src: '**',
+                dest: './build/fonts',
+            },
+        },
+        watch: {
+            sass: {
+                files: './scss/{,*/}*.{scss,sass}',
+                tasks: ['sass:dist']
+            },
+            image: {
+                files: './img/{,*/}*.{png,jpg,jpeg,gif,svg}',
+                tasks: ['image']
             }
         }
     });
 
-    grunt.registerTask('build', ['image','concat','es6transpiler','uglify','cssmin']);
+    grunt.registerTask('build', ['image','concat','es6transpiler','uglify','sass','cssmin','postcss','copy']);
 
 }
