@@ -19,12 +19,14 @@ module.exports = function(grunt) {
                     mozjpeg: true,
                     guetzli: false,
                     gifsicle: true,
-                    svgo: true
+                    //svgo: true
+                    svgo: false // node_modules/grunt-image/node_modules/svgo/bin/svgo ENOENT
                 },
                 files: [{
                     expand: true,
                     cwd: 'img/',
-                    src: ['**/*.{png,jpg,jpeg,gif,svg}'],
+                    //src: ['**/*.{png,jpg,jpeg,gif,svg}'],
+                    src: ['**/*.{png,jpg,jpeg,gif}'], // node_modules/grunt-image/node_modules/svgo/bin/svgo ENOENT
                     dest: 'build/img/'
                 }]
             }
