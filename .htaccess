@@ -14,9 +14,13 @@ Header set Connection keep-alive
 
 RewriteEngine On
 
+# Force HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 #Don't favicon!
 RewriteCond %{REQUEST_FILENAME} !^favicon\.ico
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI}  !^(/fancybox|/font|/img|/js)
-RewriteRule ^(.*)$ index.php [L,QSA]
+RewriteRule ^(.*)$ index.html [L,QSA]
