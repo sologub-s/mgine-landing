@@ -28,15 +28,34 @@
     -->
     <!-- </DEVELOPMENT> -->
 
+    <link rel="apple-touch-icon" sizes="57x57" href="build/img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="build/img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="build/img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="build/img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="build/img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="build/img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="build/img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="build/img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="build/img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="build/img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="build/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="build/img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="build/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="build/img/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
     <base href="./" />
 </head>
 <body>
 
 <nav class="navbar-custom fixed-top d-flex align-items-center">
     <a class="navbar-brand" href="#">
-        <img src="img/logo.png" />
+        <img src="build/img/logo.png" />
     </a>
-    <button class="btn btn-custom btn-white uppercase px-4" type="button" data-toggle="modal" data-target="#loginModal">Log in</button>
+    <!--<button class="btn btn-custom btn-white uppercase px-4" type="button" data-toggle="modal" data-target="#loginModal">Log in</button>-->
+    <button class="btn btn-custom btn-white uppercase px-4" type="button" data-toggle="modal" data-target="#laterModal">Log in</button>
 </nav>
 
 <section class="section1 d-flex align-items-center container-fluid justify-content-center">
@@ -51,17 +70,19 @@
     <div class="wrapper d-flex justify-content-center">
         <div class="content">
             <h2 class="uppercase">Publishers</h2>
-            <button class="btn btn-custom btn-blue uppercase align-self-center" type="button" data-toggle="modal" data-target="#signUpModal">Join now</button>
+            <!--<button class="btn btn-custom btn-blue uppercase align-self-center" type="button" data-toggle="modal" data-target="#signUpModal">Join now</button>-->
+            <button class="btn btn-custom btn-blue uppercase align-self-center" type="button" data-toggle="modal" data-target="#laterModal">Join now</button>
         </div>
         <div class="content">
             <h2 class="uppercase">Advertisers</h2>
-            <button class="btn btn-custom btn-blue uppercase align-self-center" type="button" data-toggle="modal" data-target="#signUpModal">Sign up</button>
+            <!--<button class="btn btn-custom btn-blue uppercase align-self-center" type="button" data-toggle="modal" data-target="#signUpModal">Sign up</button>-->
+            <button class="btn btn-custom btn-blue uppercase align-self-center" type="button" data-toggle="modal" data-target="#laterModal">Sign up</button>
         </div>
     </div>
 </section>
 
 <section class="section3 d-flex align-items-center container-fluid justify-content-center">
-    <img src="img/logo.png" />
+    <img src="build/img/logo.png" />
     <a href="#">www.myaddress.com</a>
     <a href="#">myemail@mail.com</a>
 </section>
@@ -70,7 +91,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <img src="img/close.png" data-dismiss="modal" aria-label="Close" />
+                <img src="build/img/close.png" data-dismiss="modal" aria-label="Close" />
             </div>
             <div class="modal-body">
                 <h2 class="modal-title">Log in</h2>
@@ -87,7 +108,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <img src="img/close.png" data-dismiss="modal" aria-label="Close" />
+                <img src="build/img/close.png" data-dismiss="modal" aria-label="Close" />
             </div>
             <div class="modal-body">
                 <h2 class="modal-title">Sign up</h2>
@@ -102,6 +123,23 @@
                 <div><input type="url" name="website" placeholder="Website" /></div>
                 <div><input type="text" name="message" placeholder="Message" /></div>
                 <button class="btn btn-custom btn-blue uppercase align-self-center" type="button">Sign up</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="laterModal" tabindex="-1" role="dialog" aria-labelledby="laterModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="build/img/close.png" data-dismiss="modal" aria-label="Close" />
+            </div>
+            <div class="modal-body">
+                <h2 class="modal-title">Info</h2>
+                <div class="alert alert-info" role="alert">
+                    <h4 class="alert-heading">Under contruction</h4>
+                    <p class="mb-0">The website is under contruction. Real content coming soon.</p>
+                </div>
             </div>
         </div>
     </div>
