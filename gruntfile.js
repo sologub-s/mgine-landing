@@ -126,5 +126,6 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('build', ['image','concat','es6transpiler','uglify','sass','cssmin','postcss','copy']);
+    grunt.registerTask('css', ['sass','cssmin','postcss','copy']);
 
 }

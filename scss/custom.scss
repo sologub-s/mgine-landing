@@ -198,9 +198,12 @@ body {
   .navbar-brand img {
     width: 77px;
   }
-  > button {
+  > button, a.btn {
     margin-left: auto;
     height: auto;
+    &:hover {
+      color: #ffffff;
+    }
   }
 }
 
