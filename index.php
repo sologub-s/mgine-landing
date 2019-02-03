@@ -2,6 +2,12 @@
 
 $t = isset($t) ? $t : [];
 
+if ($_SERVER['SERVER_NAME'] === 'mgine.sologub.od.ua') {
+    define('DEV_MODE', 'development');
+} else {
+    define('DEV_MODE', 'production');
+}
+
 switch ($_SERVER['REQUEST_URI'])
 {
     case '/privacy-policy.html':

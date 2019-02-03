@@ -9,27 +9,27 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Roboto" rel="stylesheet">
     <!--<link rel="icon" type="image/png" href="img/favicon.ico">-->
 
+    <?php if (DEV_MODE === 'development'): ?>
+    <!-- <DEVELOPMENT> -->
+
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="node_modules/tether/dist/css/tether.min.css" rel="stylesheet" />
+    <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="build/css/custom.css?_=<?php echo time(); ?>" rel="stylesheet" />
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.slim.min.js" ></script>
+    <script type="text/javascript" src="node_modules/tether/dist/js/tether.min.js" ></script>
+    <script async type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js" ></script>
+
+    <!-- </DEVELOPMENT> -->
+    <?php else: ?>
     <!-- <PRODUCTION> -->
+
 
     <link href="build/css/bundle.min.css?_=1515534748" rel="stylesheet" />
     <script async type="text/javascript" src="build/js/bundle.min.js?_=1515534748" ></script>
 
     <!-- </PRODUCTION> -->
-
-    <!-- <DEVELOPMENT> -->
-
-    <!--
-    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="node_modules/tether/dist/css/tether.min.css" rel="stylesheet" />
-    <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="build/css/custom.css?_=1" rel="stylesheet" />
-    <script type="text/javascript" src="node_modules/jquery/dist/jquery.slim.min.js" ></script>
-    <script type="text/javascript" src="node_modules/tether/dist/js/tether.min.js" ></script>
-    <script async type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js" ></script>
-    -->
-
-    <!-- </DEVELOPMENT> -->
-
+    <?php endif; ?>
     <link rel="apple-touch-icon" sizes="57x57" href="build/img/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="build/img/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="build/img/favicon/apple-icon-72x72.png">
