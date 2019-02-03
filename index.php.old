@@ -11,13 +11,13 @@
 
     <!-- <PRODUCTION> -->
     
-    <link href="build/css/bundle.min.css?_=1515534747" rel="stylesheet" />
-    <script async type="text/javascript" src="build/js/bundle.min.js?_=1515534747" ></script>
+    <!--<link href="build/css/bundle.min.css?_=1515534747" rel="stylesheet" />-->
+    <!--<script async type="text/javascript" src="build/js/bundle.min.js?_=1515534747" ></script>-->
 
     <!-- </PRODUCTION> -->
 
     <!-- <DEVELOPMENT> -->
-    <!--
+
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="node_modules/tether/dist/css/tether.min.css" rel="stylesheet" />
     <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="node_modules/jquery/dist/jquery.slim.min.js" ></script>
     <script type="text/javascript" src="node_modules/tether/dist/js/tether.min.js" ></script>
     <script async type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js" ></script>
-    -->
+
     <!-- </DEVELOPMENT> -->
 
     <link rel="apple-touch-icon" sizes="57x57" href="build/img/favicon/apple-icon-57x57.png">
@@ -93,8 +93,19 @@
     <span>
         30 N Gould St. STE R<br />
         Sheridan, WY 82801<br />
-        <a href="callto:+1-307-222-3019">+1-307-222-3019</a>
+        <a href="callto:+1-307-439-4401">+1-307-439-4401</a>
     </span>
+    <div class="wrapper d-flex justify-content-center">
+        <div class="content">
+            <a href="/privacy-policy.html">Privacy Policy</a>
+        </div>
+        <div class="content">
+            <a href="/advertisers-terms-and-conditions.html">Advertisers terms & conditions</a>
+        </div>
+        <div class="content">
+            <a href="/publisher-terms-and-conditions.html">Publisher terms & conditions</a>
+        </div>
+    </div>
 </section>
 
 <!--

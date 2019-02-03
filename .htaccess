@@ -23,4 +23,4 @@ RewriteCond %{REQUEST_FILENAME} !^favicon\.ico
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI}  !^(/fancybox|/font|/img|/js)
-RewriteRule ^(.*)$ index.html [L,QSA]
+RewriteRule ^(.*)$ index.php [L,QSA]
