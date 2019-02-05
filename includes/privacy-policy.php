@@ -4,10 +4,10 @@
 
 <?php require_once 'header.php'; ?>
 
-<section class="section-content">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
+<?php require_once 'section-title.php'; ?>
+
+    <section class="section-content">
+        <div class="container">
                 <h3>Privacy Policy</h3>
 
                 <p>As a company in the field of online and mobile marketing, it is essential for us and our customers that the provisions of the General Data Protection Regulation (GDPR) and the respective national data protection laws are complied within our work.</p>
@@ -140,9 +140,8 @@
                 E-mail: <a href="mailto:contact@mgine.net">contact@mgine.net</a></p>
 
 
-            </div>
         </div>
-    </div>
-</section>
+    </section>
+</main>
 
 <?php require_once 'footer.php'; ?>

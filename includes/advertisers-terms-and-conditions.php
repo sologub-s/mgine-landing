@@ -4,10 +4,10 @@
 
 <?php require_once 'header.php'; ?>
 
-<section class="section-content">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
+<?php require_once 'section-title.php'; ?>
+
+    <section class="section-content">
+        <div class="container">
 
                 <h1>Advertisers Terms & Conditions</h1>
 
@@ -276,9 +276,8 @@
 
                 <p>IN WITNESS WHEREOF, MGine Digital LLC and Advertiser have caused this Advertiser Agreement to be executed by their duly authorized representatives.</p>
 
-            </div>
         </div>
-    </div>
-</section>
+    </section>
+</main>
 
 <?php require_once 'footer.php'; ?>

@@ -1,35 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
     <title>Mgine<?php echo isset($t['title']) ? ' - '.$t['title'] : '' ?></title>
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="keywords" content="mgine" />
-    <meta name="description" content="Mgine" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Roboto" rel="stylesheet">
-    <!--<link rel="icon" type="image/png" href="img/favicon.ico">-->
-
     <?php if (DEV_MODE === 'development'): ?>
-    <!-- <DEVELOPMENT> -->
+        <!-- <DEVELOPMENT> -->
 
-    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="node_modules/tether/dist/css/tether.min.css" rel="stylesheet" />
-    <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="build/css/custom.css?_=<?php echo time(); ?>" rel="stylesheet" />
-    <script type="text/javascript" src="node_modules/jquery/dist/jquery.slim.min.js" ></script>
-    <script type="text/javascript" src="node_modules/tether/dist/js/tether.min.js" ></script>
-    <script async type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js" ></script>
+        <link rel="stylesheet" href="styles/fonts.css?_=<?php echo time(); ?>">
+        <link rel="stylesheet" href="styles/styles.css?_=<?php echo time(); ?>">
+        <link rel="stylesheet" href="styles/custom.css?_=<?php echo time(); ?>" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="js/app.js?_=<?php echo time(); ?>"></script>
+        <script src="js/mail.js?_=<?php echo time(); ?>"></script>
 
-    <!-- </DEVELOPMENT> -->
+        <!-- </DEVELOPMENT> -->
     <?php else: ?>
-    <!-- <PRODUCTION> -->
+        <!-- <PRODUCTION> -->
 
 
-    <link href="build/css/bundle.min.css?_=1515534748" rel="stylesheet" />
-    <script async type="text/javascript" src="build/js/bundle.min.js?_=1515534748" ></script>
+        <!--
+        <link href="build/css/bundle.min.css?_=1515534748" rel="stylesheet" />
+        <script async type="text/javascript" src="build/js/bundle.min.js?_=1515534748" ></script>
+        -->
 
-    <!-- </PRODUCTION> -->
+        <?php
+        $timeCache = 1;
+        ?>
+
+        <link rel="stylesheet" href="styles/fonts.css?_=<?php echo $timeCache; ?>">
+        <link rel="stylesheet" href="styles/styles.css?_=<?php echo $timeCache; ?>">
+        <link rel="stylesheet" href="styles/custom.css?_=<?php echo $timeCache; ?>" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="js/app.js?_=<?php echo $timeCache; ?>"></script>
+        <script src="js/mail.js?_=<?php echo $timeCache; ?>"></script>
+
+        <!-- </PRODUCTION> -->
     <?php endif; ?>
+
     <link rel="apple-touch-icon" sizes="57x57" href="build/img/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="build/img/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="build/img/favicon/apple-icon-72x72.png">
@@ -50,21 +58,37 @@
 
     <meta name="google-site-verification" content="ZCkCFNXE30IDac4qOSy42zhmiA7RHltWWtfCMVhmegw" />
 
-    <base href="./" />
 </head>
 <body>
+<div class="overlay"></div>
+<div class="contentWrapper">
+    <header>
+        <div class="container">
+            <button class="burgerIco">
+                <svg aria-hidden="true">
+                    <use xlink:href="imgs/svg/icons.svg#burgerIco"></use>
+                </svg>
+            </button>
+            <a href="//mgine.offerslook.com/index.php?r=site%2Flogin" class="logo">
+                <svg aria-hidden="true">
+                    <use xlink:href="imgs/svg/logo.svg#logo"></use>
+                </svg>
+            </a>
+            <nav>
+                <button class="closeMenu">
+                    <svg aria-hidden="true">
+                        <use xlink:href="imgs/svg/icons.svg#closeIco"></use>
+                    </svg>
+                </button>
+                <ul>
+                    <li><a href="/publishers.html">Publishers</a></li>
+                    <li><a href="/advertisers.html">Advertisers</a></li>
+                </ul>
+                <a class="btn_default" href="//mgine.offerslook.com/index.php?r=site%2Flogin">Login</a>
+            </nav>
+            <a class="btn_default mobile" href="//mgine.offerslook.com/index.php?r=site%2Flogin">Login</a>
+        </div>
+    </header>
+    <main>
 
-<nav class="navbar-custom fixed-top d-flex align-items-center">
-    <a class="navbar-brand" href="https://mgine.offerslook.com">
-        <img src="build/img/logo.png" />
-    </a>
-    <!--<button class="btn btn-custom btn-white uppercase px-4" type="button" data-toggle="modal" data-target="#loginModal">Log in</button>-->
-    <!--<button class="btn btn-custom btn-white uppercase px-4" type="button" data-toggle="modal" data-target="#laterModal">Log in</button>-->
-    <a class="btn btn-custom btn-white uppercase px-4" role="button" href="//mgine.offerslook.com/index.php?r=site/login" >Log in</a>
-</nav>
-
-<section class="section1 d-flex align-items-center container-fluid justify-content-center">
-    <h1>Premium Performance Network</h1>
-</section>
-
-<a id="beforeContent"></a>
+        <a id="beforeContent"></a>

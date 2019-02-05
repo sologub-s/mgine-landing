@@ -1,3 +1,5 @@
+@import './_mixins';
+
 $colorBlue: #00489D;
 $colorLightBlue: #4A90E2;
 $colorRed: #D50000;
@@ -7,6 +9,12 @@ $colorInputDefault: rgba(0,0,0,0.87);
 $navHeight: 64;
 $navHeightXs: 120;
 $mobileMaxWidth: 1023;
+
+@include font-face(OpenSans-Bold, '../fonts/OpenSans-Bold', null, null, ttf);
+
+$fontFamilyOpenSans: 'Open Sans';
+////$fontFamilyOpenSansBold: 'Open Sans Bold', arial;
+$fontFamilyOpenSansBold: 'OpenSans-Bold';
 
 html,
 body {
@@ -27,16 +35,20 @@ body {
 }
 
 .modal-dialog {
-  align-items: center;
-  width: 520px;
-  @media (max-width: #{$mobileMaxWidth}px) {
-    width: auto;
+  overflow: hidden;
+  &.modal-full {
+    min-width: 100%;
+    margin: 0;
+    .modal-content {
+      min-height: 100vh;
+    }
   }
+  align-items: center;
   .modal-header {
     border: none;
     img {
-      width: 14px;
-      height: 14px;
+      width: 36px;
+      height: 36px;
       margin-left: auto;
       cursor: pointer;
       transition: transform .4s ease-in-out;
@@ -45,25 +57,30 @@ body {
       }
     }
   }
+  .modal-content {
+    border: none;
+    border-radius: 0;
+  }
   .modal-body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 60px;
     padding-left: 40px;
     padding-right: 40px;
-    background: url('../img/modalBg.png') left bottom no-repeat;
     @media (max-width: #{$mobileMaxWidth}px) {
       padding-left: 20px;
       padding-right: 20px;
     }
     a {
       color: $colorBlue;
+      &.btn-link {
+        color: $colorDarkGrey;
+      }
       text-decoration: none;
-      font-family: 'Open Sans';
-      font-size: 16px;
+      font-family: $fontFamilyOpenSansBold;
+      font-size: 20px;
       letter-spacing: 0;
-      margin-top: 20px;
+      margin-top: 50px;
       &:hover {
         text-decoration: underline;
       }
@@ -87,11 +104,6 @@ body {
       }
       input {
         width: 100%;
-        /*
-        height: 0px;
-        padding-bottom: 15px;
-        padding-top: 20px;
-        */
         height: 35px;
         border: none;
         border-bottom-style: solid;
@@ -143,7 +155,7 @@ body {
     }
   }
   h2 {
-    font-family: 'Open Sans';
+    font-family: $fontFamilyOpenSansBold;
     font-weight: 600;
     font-size: 36px;
     color: $colorDarkGrey;
@@ -152,10 +164,70 @@ body {
   }
 }
 
+.mobileOnly {
+  @media (min-width: #{$mobileMaxWidth+1}px) {
+    display: none !important;
+  }
+}
+
+.desktopOnly {
+  @media (max-width: #{$mobileMaxWidth}px) {
+    display: none !important;
+  }
+}
+
+.navbar-custom {
+  background-color: #ffffff;
+  color: $colorBlue;
+  height: #{$navHeight}px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+  padding-left: 10%;
+  padding-right: 10%;
+  flex-wrap: wrap;
+  .navbar-brand img {
+    width: 77px;
+  }
+  .btn {
+    margin-left: 12px;
+    height: auto;
+    &:nth-child(2) {
+      margin-left: auto;
+    }
+  }
+}
+
+.btn-link {
+  color: $colorDarkGrey;
+  border: none;
+  font-family: $fontFamilyOpenSansBold;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 0;
+  &:hover {
+    color: $colorLightBlue;
+    text-decoration: none;
+  }
+}
+
+.btn-bars {
+  color: $colorBlue;
+  border: none;
+  font-family: $fontFamilyOpenSansBold;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 0;
+  padding: 0;
+  margin-left: 0px !important;
+  &:hover {
+    color: $colorLightBlue;
+    text-decoration: none;
+  }
+}
+
 .btn-custom {
   border: 2px solid $colorBlue;
   border-radius: initial;
-  font-family: 'Open Sans';
+  font-family: $fontFamilyOpenSansBold;
   font-weight: bold;
   font-size: 16px;
   letter-spacing: 0;
@@ -187,24 +259,12 @@ body {
   text-transform: uppercase;
 }
 
-.navbar-custom {
-  background-color: #ffffff;
-  color: $colorBlue;
-  height: #{$navHeight}px;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
-  padding-left: 10%;
-  padding-right: 10%;
-  flex-wrap: wrap;
-  .navbar-brand img {
-    width: 77px;
-  }
-  > button, a.btn {
-    margin-left: auto;
-    height: auto;
-    &:hover {
-      color: #ffffff;
-    }
-  }
+.triangle {
+  width: 10px;
+  height: 20px;
+  display: inline-block;
+  background: url('../img/triangle.svg') center no-repeat;
+  margin-bottom: -1px;
 }
 
 section.section1 {
@@ -217,10 +277,9 @@ section.section1 {
     background-position: left top;
   }
   h1 {
-    font-family: 'Open Sans';
-    font-weight: 600;
+    font-family: $fontFamilyOpenSansBold;
     font-size: 36px;
-    color: $colorDarkGrey;
+    color: $colorBlue;
     letter-spacing: 0;
   }
 }
@@ -244,7 +303,6 @@ section.section2 {
     width: 50%;
     height: 100%;
     left: 0;
-    top: 0;
     background: url('../img/overlay.svg') right center no-repeat;
   }
 
@@ -253,7 +311,6 @@ section.section2 {
     width: 80%;
     height: 80%;
     left: 0;
-    top: 0;
     background: url('../img/overlay.svg') right center no-repeat;
   }
 
@@ -262,19 +319,18 @@ section.section2 {
     width: 100%;
     height: 100%;
     left: 0;
-    top: 0;
 
     .content {
       margin: 0 180px;
       align-self: center;
       text-align: center;
-      h2 {
-        font-family: 'Open Sans';
+      h2 a {
+        font-family: $fontFamilyOpenSansBold;
         font-weight: 600;
         font-size: 24px;
-        color: $colorDarkGrey;
+        color: $colorBlue;
         letter-spacing: 0;
-        margin-bottom: 30px;
+        //margin-bottom: 30px;
       }
       .btn-custom {
         margin: 0 auto;
@@ -309,7 +365,7 @@ section.section3 {
     margin-top: 80px;
   }
   a {
-    font-family: 'Open Sans';
+    font-family: $fontFamilyOpenSansBold;
     font-weight: 600;
     font-size: 16px;
     color: $colorDarkGrey;
@@ -337,14 +393,6 @@ section.section3 {
     padding-bottom: 20px;
     .wrapper {
       flex-direction: column;
-      .content {
-        /*margin: 130px 0;*/
-        /*
-        h2 {
-          margin-bottom: 20px;
-        }
-        */
-      }
     }
   }
 }

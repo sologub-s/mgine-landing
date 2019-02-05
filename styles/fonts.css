@@ -1,0 +1,30 @@
+@font-face {
+    font-family: OSSemi;
+    src: url('fonts/OpenSans-SemiBold/OpenSans-SemiBold.eot');
+    src: local(""),
+    url('fonts/OpenSans-SemiBold/OpenSans-SemiBold.woff') format('woff'),
+    url('fonts/OpenSans-SemiBold/OpenSans-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: OSBold;
+    src: url('fonts/OpenSans-Bold/OpenSans-Bold.eot');
+    src: local(""),
+    url('fonts/OpenSans-Bold/OpenSans-Bold.woff') format('woff'),
+    url('fonts/OpenSans-Bold/OpenSans-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: RR;
+    src: url('fonts/Roboto-Regular/Roboto-Regular.eot');
+    src: local(""),
+    url('fonts/Roboto-Regular/Roboto-Regular.woff') format('woff'),
+    url('fonts/Roboto-Regular/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+

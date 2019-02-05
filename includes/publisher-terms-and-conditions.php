@@ -4,10 +4,10 @@ $t['title'] = 'Publisher terms & conditions';
 
 <?php require_once 'header.php'; ?>
 
-<section class="section-content">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
+<?php require_once 'section-title.php'; ?>
+
+    <section class="section-content">
+        <div class="container">
 
                 <h1>Publisher Terms & Conditions</h1>
 
@@ -236,9 +236,8 @@ $t['title'] = 'Publisher terms & conditions';
                 ﻿
                 <p>By submitting and application to Affiliate Program, you affirm and acknowledge that you have read this Agreement in its entirety and agree to be bound by all of its terms and conditions. If you do not wish to be bound by this Agreement, you should not submit an application to Affiliate Program. If an individual is accessing this Agreement on behalf of a business entity, by doing so, such individual represents that they have the legal capacity and authority to bind such business entity to this Agreement. This Agreement was last revised on 24-05-2018.</p>
 
-            </div>
         </div>
-    </div>
-</section>
+    </section>
+    </main>
 
 <?php require_once 'footer.php'; ?>

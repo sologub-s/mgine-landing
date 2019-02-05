@@ -1,0 +1,218 @@
+/* colors */
+@white: #fff;
+@blue: #00489d;
+@input: #4A90E2;
+@text: #4a4a4a;
+  /* colors */
+
+
+/*fonts*/
+
+/*Gotham*/
+@OSSB: OSSemi, sans-serif;
+@OSB: OSBold, sans-serif;
+@RR: RR, sans-serif;
+
+/*fonts*/
+
+/*functions*/
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: @OSB, sans-serif;
+  color: @text;
+  -webkit-font-smoothing: antialiased;
+  padding: 0;
+  margin: 0;
+  //@media @desktop-xl{
+  //  font-size: 14px;
+  //}
+  //@media @desktop, @tablet, @mobile{
+  //  font-size: 13px;
+  //}
+}
+/* For modern browsers */
+
+//.justify-after {
+//
+//}
+
+/*----------------------Трансформация--------------------------*/
+.transform(@rot){
+  -webkit-transform: @rot;
+  -moz-transform: @rot;
+  -ms-transform: @rot;
+  -o-transform: @rot;
+  transform: @rot;
+}
+
+.transition(@transition){
+  -webkit-transition: @transition;
+  -moz-transition: @transition;
+  -ms-transition: @transition;
+  -o-transition: @transition;
+  transition: @transition;
+}
+
+.background-size(@cover) {
+  -moz-background-size: @cover;
+  -webkit-background-size: @cover;
+  -o-background-size: @cover;
+  background-size: @cover;
+}
+
+.border-radius(@border-radius){
+  -webkit-border-radius: @border-radius;
+  -moz-border-radius: @border-radius;
+  border-radius: @border-radius;
+}
+/*----------------------Трансформация--------------------------*/
+
+.placeholder(@color: #fff) {
+  &::-moz-placeholder {
+    color: @color;
+  }
+  &:-moz-placeholder {
+    color: @color;
+  }
+  &:-ms-input-placeholder {
+    color: @color;
+  }
+  &::-webkit-input-placeholder {
+    color: @color;
+  }
+}
+
+.pos(@top: 50%, @left: 0){
+  top: @top;
+  left: @left;
+}
+.pos-center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.pos-centerY {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.pos-centerX {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.square(@width: 10px) {
+  width: @width;
+  height: @width;
+}
+
+.cirkle(@width: 10px){
+  width: @width;
+  height: @width;
+  border-radius: 100%;
+}
+
+
+
+.animation(@name, @duration, @function, @count, @state, @delay: 0)
+{
+  -webkit-animation-name: @name;
+  -webkit-animation-duration: @duration;
+  -webkit-animation-timing-function: @function;
+  -webkit-animation-iteration-count: @count;
+  -webkit-animation-play-state: @state;
+  -webkit-animation-delay: @delay;
+
+
+  -moz-animation-name: @name;
+  -moz-animation-duration: @duration;
+  -moz-animation-timing-function: @function;
+  -moz-animation-iteration-count: @count;
+  -moz-animation-play-state: @state;
+  -moz-animation-delay: @delay;
+
+  -ms-animation-name: @name;
+  -ms-animation-duration: @duration;
+  -ms-animation-timing-function: @function;
+  -ms-animation-iteration-count: @count;
+  -ms-animation-play-state: @state;
+  -ms-animation-delay: @delay;
+
+  -o-animation-name: @name;
+  -o-animation-duration: @duration;
+  -o-animation-timing-function: @function;
+  -o-animation-iteration-count: @count;
+  -o-animation-play-state: @state;
+  -o-animation-delay: @delay;
+
+  animation-name: @name;
+  animation-duration: @duration;
+  animation-timing-function: @function;
+  animation-iteration-count: @count;
+  animation-play-state: @state;
+  animation-delay: @delay;
+
+}
+
+.delay(@delay){
+  -webkit-animation-delay: @delay;
+  -moz-animation-delay: @delay;
+  -ms-animation-delay: @delay;
+  -o-animation-delay: @delay;
+  animation-delay: @delay;
+}
+
+.paused(@state)
+{
+  -webkit-animation-play-state: @state !important;
+  -moz-animation-play-state: @state !important;
+  -ms-animation-play-state: @state !important;
+  -o-animation-play-state: @state !important;
+  animation-play-state: @state !important;
+}
+
+.perspective(@p){
+  -webkit-perspective: @p;
+  -moz-perspective: @p;
+  -ms-perspective: @p;
+  -o-perspective: @p;
+  perspective: @p;
+}
+
+
+/*functions*/
+
+
+/*animations*/
+/*------------------------move bg---------------------------*/
+/*animations*/
+
+// Breakpoints
+// ------------------------- Source: http://blog.scur.pl/2012/06/variable-media-queries-less-css/
+
+@mobile-xs:   ~"only screen and (max-width: 480px)";
+@mobile:      ~"only screen and (max-width: 767px)";
+@tablet:      ~"only screen and (min-width: 768px) and (max-width: 1023px)";
+@desktop:     ~"only screen and (min-width: 1024px) and (max-width: 1366px)";
+@desktop-xl:  ~"only screen and (min-width: 1367px) and (max-width: 1680px)";
+
+@media only screen and (min-width: 768px) and (max-height: 600px){
+
+}
