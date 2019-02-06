@@ -9,6 +9,7 @@ function mobileMenu() {
     let openBtn = document.querySelectorAll('.burgerIco')[0];
     let closeBtn = document.querySelectorAll('.closeMenu')[0];
     let menu = document.querySelectorAll('header nav')[0];
+    let actionCloseMenu = document.querySelectorAll('.actionCloseMenu');
 
     closeBtn.addEventListener('click', function (e) {
         menu.classList.remove('show')
@@ -16,6 +17,12 @@ function mobileMenu() {
 
     openBtn.addEventListener('click', function (e) {
         menu.classList.add('show')
+    });
+
+    actionCloseMenu.forEach((actionCloseMenuItem) => {
+        actionCloseMenuItem.addEventListener('click', function (e) {
+            closeBtn.click();
+        });
     });
 
 }

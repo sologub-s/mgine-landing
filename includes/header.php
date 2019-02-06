@@ -25,7 +25,8 @@
         -->
 
         <?php
-        $timeCache = 1;
+        $timeCache = 3;
+        //$timeCache = time();
         ?>
 
         <link rel="stylesheet" href="styles/fonts.css?_=<?php echo $timeCache; ?>">
@@ -81,8 +82,8 @@
                     </svg>
                 </button>
                 <ul>
-                    <li><a href="/publishers.html">Publishers</a></li>
-                    <li><a href="/advertisers.html">Advertisers</a></li>
+                    <li><a href="<?php echo $publishersPageLink; ?>" class="actionCloseMenu">Publishers</a></li>
+                    <li><a href="<?php echo $advertisersPageLink; ?>" class="actionCloseMenu">Advertisers</a></li>
                 </ul>
                 <a class="btn_default" href="//mgine.offerslook.com/index.php?r=site%2Flogin">Login</a>
             </nav>

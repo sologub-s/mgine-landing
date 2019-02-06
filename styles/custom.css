@@ -9,3 +9,22 @@ textarea.red-border {
 .popup {
     position: fixed;
 }
+
+.btn_sign_up {
+    display: table;
+    margin: 20px auto 0 auto;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .beforeContentAnchor {
+        position: absolute;
+        top: -40px;
+        left: -10000px;
+    }
+
+    .section1 {
+        position: relative;
+    }
+
+}
